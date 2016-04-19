@@ -7,7 +7,7 @@ public class BoardDAO implements BoardDAOInter {
 
 	@Override
 	public BoardDTO getInstance() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
