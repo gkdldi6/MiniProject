@@ -2,12 +2,14 @@ package com.jin.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.Provider.Service;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jin.service.Service;
+import com.jin.uri.Action;
 
 /**
  * Servlet implementation class Controller
@@ -47,7 +49,7 @@ public class Controller extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		//initParams에서 propertyConfig의 값을 읽어옴
-				String props = config.getInitParameter("PropertyConfig");
+				String props = config.getInitParameter("propertyConfig");
 				String realFolder = "/property"; //properties 파일이 저장된 폴더
 
 
@@ -112,19 +114,20 @@ public class Controller extends HttpServlet {
 
 	public void requestPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String view = null;
-		Service com = null;
+		Action act = null;
 
 		try {
 			String command = request.getRequestURI();
 			if(command.indexOf(request.getContextPath()) == 0) {
-				command = command.substring(request.getContextPath().length());
+				command = command.substring(request.getContextPath().length()
+			);
 
 				System.out.println("요청 명령 : " + command);
 				System.out.println("요청 처리 클래스 : " + command.toString());
 
-				com = (Service) commandMap.get(command);
-				view = com.service(request, response);
-				System.out.println("요청  처리 결과 뷰 : " + com.toString());
+				act = (Action) commandMap.get(command);
+				view = act.action(request, response);
+				System.out.println("요청  처리 결과 뷰 : " + view);
 			}
 
 		}catch(Throwable t) {
@@ -132,8 +135,7 @@ public class Controller extends HttpServlet {
 			throw new ServletException(t);
 		}
 
-		RequestDispatcher dispatcher = 
-				request.getRequestDispatcher(view);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}
 	

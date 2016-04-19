@@ -3,7 +3,9 @@ package com.jin.user;
 import java.sql.Connection;
 
 public class UserDAO implements UserDAOInter {
-
+	private static UserDAO instance = new UserDAO();
+	
+	
 	@Override
 	public UserDTO getInstance() {
 		// TODO Auto-generated method stub
