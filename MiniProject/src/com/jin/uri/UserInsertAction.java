@@ -25,5 +25,4 @@ public class UserInsertAction implements Action {
 	
 		return "/main.jsp";
 	}
-
 }

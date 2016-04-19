@@ -26,7 +26,7 @@ import com.jin.uri.Action;
  */
 @WebServlet(
 		urlPatterns = { 
-				"/Controller", 
+				"/Controller",
 				"*.do"
 		}, 
 		initParams = { 

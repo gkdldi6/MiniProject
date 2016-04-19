@@ -8,7 +8,7 @@
 <body>
 	<h1>매치메이커</h1>
 		<div id="loginMenu">
-			<jsp:include page="loginForm.jsp"></jsp:include>
+			<jsp:include page="login-form.jsp"></jsp:include>
 		</div>
 	<h2>게시판</h2>
 </body>

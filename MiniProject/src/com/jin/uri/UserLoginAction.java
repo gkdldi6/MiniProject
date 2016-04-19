@@ -11,12 +11,12 @@ public class UserLoginAction implements Action {
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
+		System.out.println(id+pw);
 		UserDAO userDAO = UserDAO.getInstance();
 		int result = userDAO.login(id, pw);
 		
 		request.setAttribute("result", result);
 		
-		return "/login.jsp";
+		return "/login-form.jsp";
 	}
 }
