@@ -17,7 +17,6 @@ public class UserLoginAction implements Action {
 		
 		request.setAttribute("result", result);
 		
-		return "/loginForm.jsp";
+		return "/login.jsp";
 	}
-
 }

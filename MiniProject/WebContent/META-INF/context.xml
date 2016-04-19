@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 	<Resource type="javax.sql.DataSource" 
-		name="jdbc/mall" 
+		name="jdbc/matchmaker" 
 		auth="Container"
 		username="root" 
-		url="jdbc:mysql://localhost:3306/mall"
+		url="jdbc:mysql://localhost:3306/matchmaker"
 		password="1234" 
 		maxIdle="10" 
 		maxActive="30"

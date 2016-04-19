@@ -5,16 +5,35 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#submit").click(function(){
+			$.ajax({
+				type: 'post',
+				url: '/MiniProject/Controller/login.do',
+				data: {
+					id: $('#id').val(),
+					pw: $('#pw').val()
+				},
+				success: function(data){
+					$('#loginMenu').html(data);
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
 	<c:if test="${requestScope.result==null}">
-		<form action="/MiniProject/Controller/login.do" method="post">
-			<label>아이디</label>
-			<input type="text" name="id">
-			<label>비밀번호</label>
-			<input type="text" name="pw">
-			<input type="submit">
-		</form>
+		<label>아이디</label>
+		<input type="text" id="id" name="id">
+		<label>비밀번호</label>
+		<input type="text" id="pw" name="pw">
+		<input type="button" value="로그인">
+	</c:if>
+	<c:if test="${requestScope.result==1}">
+		<h1>로그인에 성공하였습니다.</h1>
 	</c:if>
 	<c:if test="${requestScope.result==0}">
 		<h1>아이디와 비밀번호가 틀렸습니다.</h1>

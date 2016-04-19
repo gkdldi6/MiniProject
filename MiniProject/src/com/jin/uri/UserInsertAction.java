@@ -3,11 +3,26 @@ package com.jin.uri;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jin.user.UserDAO;
+import com.jin.user.UserDTO;
+
 public class UserInsertAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		request.setAttribute("result", "삽입");
+		UserDTO user = new UserDTO();
+		user.setId(request.getParameter("id"));
+		user.setPw(request.getParameter("pw"));
+		user.setName(request.getParameter("name"));
+		user.setAge(request.getParameter("age"));
+		user.setEmail(request.getParameter("email"));
+		
+		
+		UserDAO userDAO = UserDAO.getInstance();
+		int result = userDAO.insertUser(user);
+		
+		request.setAttribute("result", result);
+	
 		return "/main.jsp";
 	}
 

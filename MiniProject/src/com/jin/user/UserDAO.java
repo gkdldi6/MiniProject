@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 public class UserDAO {
 	private static UserDAO instance = new UserDAO();
+	public static final int SUCCESS = 1, FAILURE = 0, ERROR = -1;
 
 	
 	private UserDAO() {}
@@ -22,22 +23,41 @@ public class UserDAO {
 	public Connection getConnection() throws Exception {
 		 Context initCtx = new InitialContext();
 	     Context envCtx = (Context) initCtx.lookup("java:comp/env");
-	     DataSource ds = (DataSource)envCtx.lookup("jdbc/mall");
+	     DataSource ds = (DataSource)envCtx.lookup("jdbc/matchmaker");
 	     
 	     System.out.println("DB가 연결 되었습니다.");
 	     return ds.getConnection();
 	}
 
-	public void insertUser(UserDTO user) {
-		// TODO Auto-generated method stub
+	public int insertUser(UserDTO user) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
 		
+		try {
+			conn = getConnection();
+			
+			String sql = "INSERT INTO USER VALUES(?, ?, ?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getId());
+			pstmt.setString(2, user.getPw());
+			pstmt.setString(3, user.getName());
+			pstmt.setString(4, user.getAge());
+			pstmt.setString(5, user.getEmail());
+			
+			pstmt.executeUpdate();
+			
+			return SUCCESS;
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return FAILURE;
 	}
 
 	public int login(String id, String pw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
-		int result = -1;
 		
 		try {
 			conn = getConnection();
@@ -51,18 +71,18 @@ public class UserDAO {
 				String realPw = rs.getString("pw");
 				
 				if(pw.equals(realPw)) {
-					result = 1;
+					return SUCCESS;
 				} else {
-					result = 0;
+					return FAILURE;
 				}
 			}
 			else {
-				result = 0;
+				return FAILURE;
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return result;
+		return ERROR;
 	}
 
 	public int confirmId(String id) {
