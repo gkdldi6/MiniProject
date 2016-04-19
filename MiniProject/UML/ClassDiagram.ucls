@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="com.jin.controller.Controller" project="MiniProject" 
-    file="/MiniProject/src/com/jin/controller/Controller.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="com.jin.controller.Controller2" project="MiniProject" 
+    file="/MiniProject/src/com/jin/controller/Controller2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="766" y="309"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
