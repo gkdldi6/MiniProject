@@ -6,6 +6,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${requestScope.result }
+	<form action="/MiniProject/Controller/login.do" method="post">
+		
+		<input type="text" name="id">
+		<input type="text" name="pw">
+		<input type="submit">
+	</form>
 </body>
 </html>
