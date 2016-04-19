@@ -1,54 +1,85 @@
 package com.jin.user;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-public class UserDAO implements UserDAOInter {
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+
+public class UserDAO {
 	private static UserDAO instance = new UserDAO();
+
 	
+	private UserDAO() {}
 	
-	@Override
-	public UserDTO getInstance() {
-		// TODO Auto-generated method stub
-		return null;
+	public static UserDAO getInstance() {
+		return instance;
 	}
 
-	@Override
-	public Connection getConnection() {
-		// TODO Auto-generated method stub
-		return null;
+	public Connection getConnection() throws Exception {
+		 Context initCtx = new InitialContext();
+	     Context envCtx = (Context) initCtx.lookup("java:comp/env");
+	     DataSource ds = (DataSource)envCtx.lookup("jdbc/mall");
+	     
+	     System.out.println("DB가 연결 되었습니다.");
+	     return ds.getConnection();
 	}
 
-	@Override
 	public void insertUser(UserDTO user) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public int userCheck(String id, String pw) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int login(String id, String pw) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs= null;
+		int result = -1;
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT PW FROM USER WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String realPw = rs.getString("pw");
+				
+				if(pw.equals(realPw)) {
+					result = 1;
+				} else {
+					result = 0;
+				}
+			}
+			else {
+				result = 0;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
-	@Override
 	public int confirmId(String id) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
-	@Override
 	public UserDTO getUser(String id, String pw) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public int updateUser(UserDTO user) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
 	public int deleteUser(String id, String pw) {
 		// TODO Auto-generated method stub
 		return 0;
