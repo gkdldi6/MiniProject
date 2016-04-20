@@ -11,7 +11,7 @@
 		$("#login").click(function(){
 			$.ajax({
 				type: 'post',
-				url: 'Controller/login.do',
+				url: 'Controller/login.user',
 				data: {
 					id: $('#id').val(),
 					pw: $('#pw').val()
@@ -23,7 +23,7 @@
 		});
 		
 		$('#register').click(function(){
-			location.href = 'user-form.jsp';
+			location.href = 'register-form.jsp';
 		});
 	});
 </script>

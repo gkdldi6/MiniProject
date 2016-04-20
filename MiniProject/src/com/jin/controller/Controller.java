@@ -27,7 +27,8 @@ import com.jin.uri.Action;
 @WebServlet(
 		urlPatterns = { 
 				"/Controller",
-				"*.do"
+				"*.user",
+				"*.board"
 		}, 
 		initParams = { 
 				@WebInitParam(name = "propertyConfig", value = "command.properties")

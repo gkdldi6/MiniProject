@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+body {
+  margin:0 auto;
+}
+
+ul,  li{
+  list-style-type: none;
+  margin-bottom: 6px;
+  line-height: 20px;
+  font-size: 12px;
+  padding:0 5px;
+  vertical-align: middle;
+  outline-style: none;
+  padding-left: 0px;
+}
+input, textarea {
+  text-rendering: auto;
+  display: inline-block;
+  word-spacing: normal;
+  text-align: start;
+  font:13.3333px Arial;
+  cursor: auto;
+  width:302px;
+  height: 20px;
+}
+table {
+  border-collapse: collapse;
+  display: table;
+  border-spacing: 2px;
+  border-color: gray;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+}
+tr {
+  display: table-row;
+}
+td {
+  height: 22px;
+  line-height: 23px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 11px;
+}
+th {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+  background: url(../Image/bg_title_table.gif) 0 bottom repeat-x;
+  font-weight: bold;
+  display: table-cell;
+  
+}
+a, a:hover {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+}
+.table_list {
+  position: relative;
+  width: 1100px;
+  height: 100%;
+  font-weight: normal;
+  margin: auto;
+  padding: 0;
+  text-align: left;
+}
+.thead_list {
+  height: 22px;
+  line-height: 23px;
+}
+.textarea_write {
+  width: 700px;
+  height:300px;
+  overflow: auto;
+}
+.div_wtitle {
+  position:relative;
+  width: 700px;
+  margin: auto;
+  padding: 10px, 10px, 0, 0;
+  vertical-align: middle;
+}
+.top_line {
+  border-top: 2px solid #6584df;
+}
+.span_wtitle {
+  display: inline-block;
+  width:70px;
+  font-weight: bold;
+  color: #646363;
+  padding: 4px, 0, 0, 10px;
+}
+.div_page_num {
+  padding: 10px;
+  text-align: center;
+}
+input.save_button {
+  background: url(../Image/btn_save.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+input.cancle_button {
+  background: url(../Image/btn_cancle.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+input.search_button {
+  background: url(../Image/b_search_btn.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+input.write_button {
+  background: url(../Image/btn_write.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}

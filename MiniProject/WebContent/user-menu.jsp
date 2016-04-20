@@ -7,33 +7,13 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-1.12.2.js"></script>
 <script type="text/javascript">
-	/* $(function(){
+	$(function(){
 		$("#update").click(function(){
-			$.ajax({
-				type: 'post',
-				url: 'Controller/login.do',
-				data: {
-					id: $('#id').val(),
-					pw: $('#pw').val()
-				},
-				success: function(data){
-					alert(data);
-				}
-			});
+			window.location.href = 'modify-form.jsp';
 		});
 		
 		$("#delete").click(function(){
-			$.ajax({
-				type: 'post',
-				url: 'Controller/login.do',
-				data: {
-					id: $('#id').val(),
-					pw: $('#pw').val()
-				},
-				success: function(data){
-					alert(data);
-				}
-			});
+			window.location.href = 'delete-form.jsp';
 		});
 		
 		$("#logout").click(function(){
@@ -49,12 +29,12 @@
 				}
 			});
 		});
-	}); */
+	});
 </script>
 </head>
 <body>
-	<a href="user-form.jsp"><button id="update">수정</button>	</a>
-	<a href="delete-form.jsp"><button id="delete">삭제</button>	</a>
+	<button id="update">수정</button>	
+	<button id="delete">삭제</button>
 	<button id="logout">로그아웃</button>
 </body>
 </html>

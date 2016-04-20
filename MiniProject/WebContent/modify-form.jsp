@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="Controller/update.do" method="post">
+	<form action="Controller/update.user" method="post">
 		<input type="text" name="id">
 		<input type="text" name="pw">
 		<input type="text" name="name">

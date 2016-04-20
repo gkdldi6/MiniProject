@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="Controller/delete.do" method="post">
+	<form action="Controller/delete.user" method="post">
 		<input type="text" name="id">
 		<input type="text" name="pw">
 		<input type="submit" value="삭제">

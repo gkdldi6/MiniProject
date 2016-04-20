@@ -29,7 +29,6 @@ public class UserDAO {
 	     Context envCtx = (Context) initCtx.lookup("java:comp/env");
 	     DataSource ds = (DataSource)envCtx.lookup("jdbc/matchmaker");
 	     
-	     System.out.println("DB가 연결 되었습니다.");
 	     return ds.getConnection();
 	}
 

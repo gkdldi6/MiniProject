@@ -3,41 +3,46 @@ package com.jin.board;
 import java.sql.Connection;
 import java.util.List;
 
-public class BoardDAO implements BoardDAOInter {
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
-	@Override
-	public BoardDTO getInstance() {
+import com.jin.user.UserDAO;
 
-		return null;
+public class BoardDAO {
+	private static BoardDAO instance = new BoardDAO();
+	
+
+	private BoardDAO() {}
+	
+	public static BoardDAO getInstance() {
+		return instance;
 	}
 
-	@Override
-	public Connection getConnection() {
-		// TODO Auto-generated method stub
-		return null;
+	public Connection getConnection() throws Exception {
+		Context initCtx = new InitialContext();
+		Context envCtx = (Context) initCtx.lookup("java:comp/env");
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/matchmaker");
+
+		return ds.getConnection();
 	}
 
-	@Override
 	public List<BoardDTO> getBoard() {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
-	@Override
-	public void insertArticle(BoardDTO board) {
-		// TODO Auto-generated method stub
+	public void insertArticle(BoardDTO article) {
 		
 	}
 
-	@Override
-	public int updateBoard(BoardDTO board) {
-		// TODO Auto-generated method stub
+	public int updateArticle(BoardDTO article) {
 		return 0;
 	}
 
-	@Override
-	public int deleteBoard(int articleNum, String pw) {
-		// TODO Auto-generated method stub
+	public int deleteArticle(int articleNum, String pw) {
 		return 0;
 	}
 
