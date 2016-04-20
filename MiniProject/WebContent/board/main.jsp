@@ -9,7 +9,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#btn_write").click(function(){
-			document.location.href = "writeForm.jsp";
+			document.location.href = "write.jsp";
 		});
 	});
 </script>
@@ -107,7 +107,7 @@
 <div class="div_page_num">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</div>
 <!-- 글쓰기버튼 -->
 <div>
-<a href=""><img src="Image/btn_write.gif"></a>
+<img id="btn_write" src="Image/btn_write.gif">
 </div>
 </div>
 </body>

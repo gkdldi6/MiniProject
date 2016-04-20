@@ -104,8 +104,8 @@ input.save_button {
   border: none;
   cursor: pointer;
 }
-input.cancle_button {
-  background: url(../Image/btn_cancle.gif) no-repeat;
+input.cancel_button {
+  background: url(../Image/btn_cancel.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;

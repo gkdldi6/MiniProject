@@ -7,8 +7,7 @@ public class BoardDeleteAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		// TODO Auto-generated method stub
-		return null;
+		return "../board/delete-pro.jsp";
 	}
 
 }
