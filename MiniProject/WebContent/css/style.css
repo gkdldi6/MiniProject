@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+body {
+  margin:0 auto;
+}
+
+ul,  li{
+  list-style-type: none;
+  margin-bottom: 6px;
+  line-height: 20px;
+  font-size: 12px;
+  padding:0 5px;
+  vertical-align: middle;
+  outline-style: none;
+  padding-left: 0px;
+}
+input, textarea {
+  text-rendering: auto;
+  display: inline-block;
+  word-spacing: normal;
+  text-align: start;
+  font:13.3333px Arial;
+  cursor: auto;
+  width:302px;
+  height: 20px;
+}
+.textarea_write {
+  width: 700px;
+  height:300px;
+  overflow: auto;
+}
+.div_wtitle {
+  position:relative;
+  width: 700px;
+  margin: auto;
+  padding: 10px, 10px, 0, 0;
+  vertical-align: middle;
+}
+.top_line {
+  border-top: 2px solid #6584df;
+}
+.span_wtitle {
+  display: inline-block;
+  width:70px;
+  font-weight: bold;
+  color: #646363;
+  padding: 4px, 0, 0, 10px;
+}
+input.save_button {
+  background: url(btn_save.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+input.cancle_button {
+  background: url(btn_cancle.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
