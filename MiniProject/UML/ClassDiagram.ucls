@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <interface id="1" language="java" name="com.jin.board.BoardDAOInter" project="MiniProject" 
-    file="/MiniProject/src/com/jin/board/BoardDAOInter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="922" y="392"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="2" language="java" name="com.jin.board.BoardDAO" project="MiniProject" 
+  <class id="1" language="java" name="com.jin.board.BoardDAO" project="MiniProject" 
     file="/MiniProject/src/com/jin/board/BoardDAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="922" y="659"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -19,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.jin.board.BoardDTO" project="MiniProject" 
+  <class id="2" language="java" name="com.jin.board.BoardDTO" project="MiniProject" 
     file="/MiniProject/src/com/jin/board/BoardDTO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="721" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -28,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.jin.user.UserDAO" project="MiniProject" 
+  <class id="3" language="java" name="com.jin.user.UserDAO" project="MiniProject" 
     file="/MiniProject/src/com/jin/user/UserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1353" y="678"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.jin.user.UserDTO" project="MiniProject" 
+  <class id="4" language="java" name="com.jin.user.UserDTO" project="MiniProject" 
     file="/MiniProject/src/com/jin/user/UserDTO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1146" y="446"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,16 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="com.jin.user.UserDAOInter" project="MiniProject" 
-    file="/MiniProject/src/com/jin/user/UserDAOInter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1353" y="374"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="7" language="java" name="com.jin.controller.Controller" project="MiniProject" 
+  <class id="5" language="java" name="com.jin.controller.Controller" project="MiniProject" 
     file="/MiniProject/src/com/jin/controller/Controller.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="236" y="116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="8" language="java" name="com.jin.uri.Action" project="MiniProject" 
-    file="/MiniProject/src/com/jin/uri/Action.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="6" language="java" name="com.jin.action.Action" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/Action.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1055" y="20"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="9" language="java" name="com.jin.uri.UserUpdateAction" project="MiniProject" 
-    file="/MiniProject/src/com/jin/uri/UserUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="com.jin.action.UserUpdateAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/UserUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="674" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -82,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.jin.uri.UserInsertAction" project="MiniProject" 
-    file="/MiniProject/src/com/jin/uri/UserInsertAction.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="com.jin.action.UserInsertAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/UserInsertAction.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1057" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -91,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.jin.uri.UserDeleteAction" project="MiniProject" 
-    file="/MiniProject/src/com/jin/uri/UserDeleteAction.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="com.jin.action.UserDeleteAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/UserDeleteAction.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1440" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,25 +82,17 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="12">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <realization id="13">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <realization id="14">    
-    <end type="SOURCE" refId="4"/>    
+  <realization id="10">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="6"/>  
   </realization>  
-  <realization id="15">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <realization id="16">    
+  <realization id="11">    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="12">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

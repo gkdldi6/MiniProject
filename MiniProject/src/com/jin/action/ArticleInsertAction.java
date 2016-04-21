@@ -1,4 +1,4 @@
-package com.jin.uri;
+package com.jin.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.jin.board.BoardDAO;
 import com.jin.board.BoardDTO;
 
-public class BoardInsertAction implements Action {
+public class ArticleInsertAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {

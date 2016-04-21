@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.jin.uri.Action;
+import com.jin.action.Action;
 
 /**
  * Servlet implementation class Controller
@@ -26,6 +26,7 @@ import com.jin.uri.Action;
 @WebServlet(
 		urlPatterns = { 
 				"/board",
+				"/board/article",
 				"*.user",
 				"*.board"
 		}, 
@@ -108,26 +109,6 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.requestPro(request, response);
-		//		String view = null;
-//		Action act = null;
-//		 
-//		try {
-//			String command = request.getParameter("num");
-//			act = (Action)commandMap.get(command);
-//			
-//			System.out.println("요청 명령 : " + command);
-//			System.out.println("요청 처리 클래스 : " + command.toString());
-//			
-//			view = act.action(request, response);
-//			System.out.println("요청  처리 결과 뷰 : " + view);
-//			
-//		}catch(Throwable t) {
-//			System.out.println("requestPro 메서드에서 예외 발생!!!");
-//			throw new ServletException(t);
-//		}
-//		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-//		dispatcher.forward(request, response);
 	}
 
 	/**

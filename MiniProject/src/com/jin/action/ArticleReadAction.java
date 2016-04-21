@@ -1,13 +1,13 @@
-package com.jin.uri;
+package com.jin.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BoardDeleteAction implements Action {
+public class ArticleReadAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		return "../board/delete-pro.jsp";
+		return "../board/article.jsp";
 	}
 
 }

@@ -5,15 +5,28 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.2.js"></script>
+<script type="text/javascript">
+	$(function () {
+		$('#test').click(function () {
+			window.location.href = '/board/article';
+		});
+	});
+</script>
 </head>
 <body>
+	<button id="test">click</button>
 
-<c:set var="result" value="Test" scope="session"/>
 
 
-<%
-	response.sendRedirect("../board/test.jsp");
-%>
+
+
+<%-- <c:set var="result" value="Test" scope="session"/> --%>
+
+
+<%-- <% --%>
+// 	response.sendRedirect("../board/test.jsp");
+<%-- %> --%>
 
 
 

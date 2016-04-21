@@ -1,4 +1,4 @@
-package com.jin.uri;
+package com.jin.action;
 
 import java.util.List;
 

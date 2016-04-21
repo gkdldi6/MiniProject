@@ -1,17 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
 <html>
-<% request.setCharacterEncoding("utf-8"); %>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<head>
+<title>MatchMaker</title>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script type="text/javascript">
-	$(function () {
-		
-		
+	$(function() {
+		$('#check').click(function() {
+			window.location.href = '../board';
+		});
 	});
 </script>
+<link rel="stylesheet" type="text/css" href="/board/css/style.css">
+</head>
 <body>
 	<header>
 		<h1>매치메이커</h1>
@@ -26,12 +28,12 @@
 					<li><span class="span_wtitle">아이디</span> <input id="writer"
 						type="text"></li>
 					<li><span class="span_wtitle">제목</span> <input id="title"
-						name="title" type="text" maxlength="50">
-					</li>
-					<li><textarea id="content" class="textarea_write"></textarea>
-					</li>
-					<li><input type="button" class="save_button"> <input
-						type="button" class="cancel_button"></li>
+						name="title" type="text" maxlength="50"></li>
+					<li><textarea id="content" class="textarea_write"></textarea></li>
+					<li><button id="check">확인</button>
+						<button id="modify">수정</button>
+						<button id="delete">삭제</button></li>
+
 				</ul>
 			</div>
 		</div>

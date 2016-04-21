@@ -4,13 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>MatchMaker</title>
 <link rel="stylesheet" type="text/css" href="/board/css/style.css">
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#btn_write").click(function() {
-			window.location.href = '/board/write.jsp';
+			alert('hello');
+			$.ajax({
+				type: 'get',
+				url: '/select.board',
+				success: function (data) {
+					$('section').html(data);
+				}
+			});
 		});
 		
 		$('tbody > tr').click(function () {
@@ -20,10 +27,10 @@
 			
 			$.ajax({
 				type: 'get',
-				url: '/board',
+				url: '/board/article',
 				data: query,
 				success: function (data) {
-					
+					window.location.href = this.url;
 				}
 			});
 		});

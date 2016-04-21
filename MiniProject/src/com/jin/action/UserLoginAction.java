@@ -1,22 +1,22 @@
-package com.jin.uri;
+package com.jin.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jin.user.UserDAO;
 
-public class UserDeleteAction implements Action {
+public class UserLoginAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
-		UserDAO userDAO = UserDAO.getInstance();
-		int result = userDAO.deleteUser(id, pw);
-		
-		System.out.println(result);
-		return "/main.jsp";
-	}
 
+		UserDAO userDAO = UserDAO.getInstance();
+		int result = userDAO.login(id, pw);
+		
+		request.setAttribute("result", result);
+		
+		return "/login-form.jsp";
+	}
 }

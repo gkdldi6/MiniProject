@@ -1,4 +1,4 @@
-package com.jin.uri;
+package com.jin.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
