@@ -6,10 +6,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>매치메이커</h1>
-		<div id="loginMenu">
-			<jsp:include page="login-form.jsp"></jsp:include>
-		</div>
-	<h2>게시판</h2>
+	<header>
+		<h1>매치메이커</h1>
+	</header>
+	<nav>
+		<span><a href="/">홈</a></span>
+		<span><a href="/board">게시판</a></span>
+	</nav>
+	<section>
+		<jsp:include page="login-form.jsp"></jsp:include>
+	</section>
 </body>
 </html>

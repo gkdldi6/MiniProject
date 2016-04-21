@@ -48,7 +48,7 @@ th {
   line-height: 34px;
   text-align: center;
   border-bottom: 1px solid #e7e7e7;
-  background: url(../Image/bg_title_table.gif) 0 bottom repeat-x;
+  background: url(/board/image/bg_title_table.gif) 0 bottom repeat-x;
   font-weight: bold;
   display: table-cell;
   
@@ -98,14 +98,14 @@ a, a:hover {
   text-align: center;
 }
 input.save_button {
-  background: url(../Image/btn_save.gif) no-repeat;
+  background: url(/board/image/btn_save.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;
   cursor: pointer;
 }
 input.cancel_button {
-  background: url(../Image/btn_cancel.gif) no-repeat;
+  background: url(/board/image/btn_cancel.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;
@@ -113,7 +113,7 @@ input.cancel_button {
 }
 
 input.search_button {
-  background: url(../Image/b_search_btn.gif) no-repeat;
+  background: url(/board/image/b_search_btn.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;
@@ -121,7 +121,7 @@ input.search_button {
 }
 
 input.write_button {
-  background: url(../Image/btn_write.gif) no-repeat;
+  background: url(/board/image/btn_write.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;

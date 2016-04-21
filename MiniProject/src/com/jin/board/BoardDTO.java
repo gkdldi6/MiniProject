@@ -1,19 +1,19 @@
 package com.jin.board;
 
 public class BoardDTO {
-	private int articleNum;
+	private String num;
 	private String writer;
 	private String content;
 	private String title;
 	private String date;
-	private int readNum;
+	private String hit;
 	
 	
-	public int getArticleNum() {
-		return articleNum;
+	public String getNum() {
+		return num;
 	}
-	public void setArticleNum(int articleNum) {
-		this.articleNum = articleNum;
+	public void setNum(String num) {
+		this.num = num;
 	}
 	public String getWriter() {
 		return writer;
@@ -39,11 +39,11 @@ public class BoardDTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getReadNum() {
-		return readNum;
+	public String getHit() {
+		return hit;
 	}
-	public void setReadNum(int readNum) {
-		this.readNum = readNum;
+	public void setHit(String hit) {
+		this.hit = hit;
 	}
 	
 }

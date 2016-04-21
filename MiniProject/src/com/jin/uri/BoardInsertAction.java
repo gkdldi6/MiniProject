@@ -3,13 +3,20 @@ package com.jin.uri;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jin.board.BoardDAO;
+import com.jin.board.BoardDTO;
+
 public class BoardInsertAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		BoardDTO article = new BoardDTO();
+		article.setTitle(request.getParameter("title"));
+		article.setWriter(request.getParameter("writer"));
+		article.setContent(request.getParameter("content"));
 		
-		String echo = request.getParameter("title") + "  " + request.getParameter("writer") + "  " +request.getParameter("content");
-		System.out.println(echo);
+		BoardDAO boardDAO = BoardDAO.getInstance();
+		boardDAO.insertArticle(article);
 		
 		return "../board/write-pro.jsp";
 	}

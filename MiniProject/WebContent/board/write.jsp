@@ -16,13 +16,11 @@
 			
 			$.ajax({
 				url: '../Controller/insert.board',
-				data: '',
+				data: article,
 				type: 'post',
-				beforeSend: function () {
-					alert(article.title + '  ' + article.writer + '  ' + article.content);
-				},
 				success: function (data) {
 					alert(data);
+					window.location.href = '../board';
 				}
 			});
 		});		
