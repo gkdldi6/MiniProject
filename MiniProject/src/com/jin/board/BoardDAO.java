@@ -40,7 +40,7 @@ public class BoardDAO {
 		try {
 			conn = getConnection();
 			
-			String sql = "SELECT NUM, WRITER, TITLE, CONTENT, DATE_FORMAT(NOW(), '%y.%m.%d') 'DATE', HIT FROM BOARD";
+			String sql = "SELECT NUM, WRITER, TITLE, CONTENT, DATE_FORMAT(NOW(), '%y.%m.%d') 'DATE', HIT FROM BOARD ORDER BY NUM DESC";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			

@@ -10,7 +10,22 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#btn_write").click(function() {
-			document.location.href = "board/write.jsp";
+			window.location.href = '/board/write.jsp';
+		});
+		
+		$('tbody > tr').click(function () {
+			$(this).addClass('click');
+			var query = {num: $('.click > td:eq(1)').text()};
+			$(this).removeClass('click');
+			
+			$.ajax({
+				type: 'get',
+				url: '/board',
+				data: query,
+				success: function (data) {
+					
+				}
+			});
 		});
 	});
 </script>
@@ -36,14 +51,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${board}" var="i">
+				<c:forEach items="${board}" var="article">
 					<tr onmouseover="this.style.backgroundColor='#eae9f7';"
 						onmouseout="this.style.backgroundColor='';">
-						<td>${i.num }</td>
-						<td>${i.title }</td>
-						<td>${i.writer }</td>
-						<td>${i.date }</td>
-						<td>${i.hit }</td>
+						<td>${article.num }</td>
+						<td>${article.title }</td>
+						<td>${article.writer }</td>
+						<td>${article.date }</td>
+						<td>${article.hit }</td>
 					</tr>
 				</c:forEach>
 			</tbody>

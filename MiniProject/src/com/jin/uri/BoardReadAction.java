@@ -17,7 +17,7 @@ public class BoardReadAction implements Action {
 		
 		request.setAttribute("board", board);
 		
-		return "/board/main.jsp";
+		return "/board/board-main.jsp";
 	}
 
 }

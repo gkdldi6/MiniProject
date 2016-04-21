@@ -8,26 +8,8 @@
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script type="text/javascript">
 	$(function () {
-		$('.save_button').click(function () {
-			var article = {
-				title: $('#title').val(),		
-				writer: $('#writer').val(),
-				content: $('#content').val()
-			};
-			
-			$.ajax({
-				url: '../Controller/insert.board',
-				data: article,
-				type: 'post',
-				success: function (data) {
-					window.location.href = '../board';
-				}
-			});
-		});		
 		
-		$('.cancel_button').click(function () {
-			history.go(-1);
-		});	
+		
 	});
 </script>
 <body>

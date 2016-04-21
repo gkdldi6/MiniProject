@@ -2,7 +2,6 @@ package com.jin.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.security.Provider.Service;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -57,7 +56,7 @@ public class Controller extends HttpServlet {
 		ServletContext context = config.getServletContext();
 		
 		//realFolder를 웹어플리케이션 시스템상의 절대경로로 변경
-		String realPath = context.getRealPath(realFolder) +"\\" + props;
+		String realPath = context.getRealPath(realFolder) +"/" + props;
 		System.out.println("실제 경로 : " + realPath);
 
 		//명령어와 처리클래스의 매핑정보를 저장할 Properties객체 생성
@@ -92,6 +91,7 @@ public class Controller extends HttpServlet {
 				Class<?> commandClass = Class.forName(className);
 				Object commandInstance = commandClass.newInstance();
 				commandMap.put(command, commandInstance);
+				
 			} catch (ClassNotFoundException e) {
 				throw new ServletException(e);
 			} catch (InstantiationException e) {
@@ -108,6 +108,26 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.requestPro(request, response);
+		//		String view = null;
+//		Action act = null;
+//		 
+//		try {
+//			String command = request.getParameter("num");
+//			act = (Action)commandMap.get(command);
+//			
+//			System.out.println("요청 명령 : " + command);
+//			System.out.println("요청 처리 클래스 : " + command.toString());
+//			
+//			view = act.action(request, response);
+//			System.out.println("요청  처리 결과 뷰 : " + view);
+//			
+//		}catch(Throwable t) {
+//			System.out.println("requestPro 메서드에서 예외 발생!!!");
+//			throw new ServletException(t);
+//		}
+//		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+//		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -124,8 +144,7 @@ public class Controller extends HttpServlet {
 		try {
 			String command = request.getRequestURI();
 			if(command.indexOf(request.getContextPath()) == 0) {
-				command = command.substring(request.getContextPath().length()
-						);
+				command = command.substring(request.getContextPath().length());
 
 				System.out.println("요청 명령 : " + command);
 				System.out.println("요청 처리 클래스 : " + command.toString());
