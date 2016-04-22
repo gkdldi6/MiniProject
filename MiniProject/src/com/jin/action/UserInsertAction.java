@@ -21,6 +21,6 @@ public class UserInsertAction implements Action {
 		UserDAO userDAO = UserDAO.getInstance();
 		userDAO.insertUser(user);
 		
-		return "main.jsp";
+		return "user/register-pro.jsp";
 	}
 }

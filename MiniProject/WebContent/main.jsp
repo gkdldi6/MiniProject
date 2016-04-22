@@ -16,7 +16,7 @@
 	</nav>
 	<section>
 		<div class="top_line"></div>
-		<jsp:include page="login-form.jsp"></jsp:include>
+		<jsp:include page="user/login-form.jsp"></jsp:include>
 	</section>
 </body>
 </html>

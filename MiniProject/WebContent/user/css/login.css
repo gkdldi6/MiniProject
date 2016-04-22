@@ -61,7 +61,7 @@ li {
   height: 24px;
   line-height: 24px;
   padding-left: 10px;
-  background: url(../Image/icon_dotted_blue.gif) 0 center no-repeat;
+  background: url(/user/image/icon_dotted_blue.gif) 0 center no-repeat;
   font-weight: bold;
   color: #2e2e2e;
 }
@@ -72,14 +72,21 @@ li {
   color: #828282;
 }
 .done_button {
-  background: url(../Image/btn_done.gif) no-repeat;
+  background: url(/user/image/btn_done.gif) no-repeat;
   width: 85px;
   height: 30px;
   border: none;
   cursor: pointer;
 }
 .cancle_button {
-  background: url(../Image/btn_cancle.gif) no-repeat;
+  background: url(/user/image/btn_cancle.gif) no-repeat;
+  width: 85px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+}
+.button {
+  background-color: #5AD2FF;
   width: 85px;
   height: 30px;
   border: none;
