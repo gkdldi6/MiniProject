@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Main</title>
+<title>매치메이커</title>
 </head>
 <body>
 	<header>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MatchMaker</title>
+<title>매치메이커</title>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -17,11 +17,23 @@
 			$('#check').attr('hidden', true);
 			$('#cancel').attr('hidden', false);
 			$('#modifyComplete').attr('hidden', false);
+			$('#title').removeAttr('readonly');
+			$('#content').removeAttr('readonly');
 		});
 		
 		$('#modifyComplete').click(function () {
 			$.ajax({
-				
+				type: 'post',
+				url: '../update.board',
+				data: {
+					num: $('#num').val(),
+					title: $('#title').val(),
+					content: $('#content').val()
+				},
+				success: function (data) {
+					alert(data);
+					window.location.href = '../board';
+				}
 			});
 		});
 		
@@ -29,8 +41,20 @@
 			window.location.href = '../board';
 		});
 		
-		$('#delete').clcick(function () {
-			
+		$('#delete').click(function () {
+			if(confirm('정말 삭제하시겠습니까?') == true) {
+				$.ajax({
+					type: 'post',
+					url: '../delete.board',
+					data: {
+						num: $('#num').val()
+					},
+					success: function (data) {
+						alert(data);
+						window.location.href = '../board';
+					}	
+				});
+			} ;
 		});
 	});
 </script>
@@ -47,6 +71,8 @@
 		<div class="top_line">
 			<div id="writeForm" class="div_wtitle">
 				<ul>
+					<li><span class="span_wtitle">글 번호</span> <input id="num"
+						type="text" value="${article.num }" readonly></li>
 					<li><span class="span_wtitle">날짜</span> <input id="date"
 						type="text" value="${article.date }" readonly></li>
 					<li><span class="span_wtitle">아이디</span> <input id="writer"

@@ -20,6 +20,7 @@
 				data: article,
 				type: 'post',
 				success: function (data) {
+					alert(data);
 					window.location.href = '../board';
 				}
 			});
