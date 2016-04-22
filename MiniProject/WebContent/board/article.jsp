@@ -58,6 +58,10 @@
 		$('#check').click(function() {
 			window.location.href = '../board';
 		});
+		
+		$('#cancel').click(function () {
+			window.location.href = '../board';
+		});
 	});
 </script>
 <link rel="stylesheet" type="text/css" href="/board/css/style.css">
