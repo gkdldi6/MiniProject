@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:if test="${result==1 }">
-	<c:set var="id" value="${id }" scope="session"></c:set>
-</c:if>
-<result>${result }</result>
+<c:remove var="id"/>
+<%
+	response.sendRedirect("/");
+%>

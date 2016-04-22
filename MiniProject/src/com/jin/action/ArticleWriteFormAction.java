@@ -7,7 +7,7 @@ public class ArticleWriteFormAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		return "../board/write.jsp";
+		return "board/write.jsp";
 	}
 
 }

@@ -17,17 +17,7 @@
 		});
 		
 		$("#logout").click(function(){
-			$.ajax({
-				type: 'post',
-				url: 'Controller/login.do',
-				data: {
-					id: $('#id').val(),
-					pw: $('#pw').val()
-				},
-				success: function(data){
-					alert(data);
-				}
-			});
+			window.location.href = 'logout-pro.jsp';
 		});
 	});
 </script>

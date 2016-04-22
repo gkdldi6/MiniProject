@@ -15,8 +15,9 @@ public class UserLoginAction implements Action {
 		UserDAO userDAO = UserDAO.getInstance();
 		int result = userDAO.login(id, pw);
 		
+		request.setAttribute("id", id);
 		request.setAttribute("result", result);
 		
-		return "/login-form.jsp";
+		return "/login-pro.jsp";
 	}
 }
