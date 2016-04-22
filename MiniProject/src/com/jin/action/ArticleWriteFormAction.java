@@ -7,6 +7,9 @@ public class ArticleWriteFormAction implements Action {
 
 	@Override
 	public String action(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		String id = request.getParameter("id");
+		request.setAttribute("writer", id);
+		
 		return "board/write.jsp";
 	}
 

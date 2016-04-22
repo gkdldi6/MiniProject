@@ -36,7 +36,7 @@
 		<div id="writeForm" class="div_wtitle">
 			<ul>
 				<li><span class="span_wtitle">아이디</span> <input id="writer"
-					type="text"></li>
+					type="text" value="${writer }" readonly></li>
 				<li><span class="span_wtitle">제목</span> <input id="title"
 					name="title" type="text" maxlength="50"></li>
 				<li><textarea id="content" class="textarea_write"></textarea></li>
