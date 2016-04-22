@@ -70,6 +70,40 @@ public class BoardDAO {
 		}
 		return board;
 	}
+	
+	public BoardDTO readArticle(String num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardDTO article = null;
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT DATE, WRITER, TITLE, CONTENT FROM BOARD WHERE NUM = ?"; 
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				article = new BoardDTO();
+				
+				article.setDate(rs.getString("DATE"));
+				article.setWriter(rs.getString("WRITER"));
+				article.setTitle(rs.getString("TITLE"));
+				article.setContent(rs.getString("CONTENT"));
+				
+				return article;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+		return null;
+	}
 
 	public void insertArticle(BoardDTO article) {
 		Connection conn = null;

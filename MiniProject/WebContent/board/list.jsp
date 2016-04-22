@@ -10,7 +10,6 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#btn_write").click(function() {
-			alert('hello');
 			$.ajax({
 				type: 'get',
 				url: '/select.board',
@@ -22,7 +21,7 @@
 		
 		$('tbody > tr').click(function () {
 			$(this).addClass('click');
-			var query = {num: $('.click > td:eq(1)').text()};
+			var query = {num: $('.click > td:eq(0)').text()};
 			$(this).removeClass('click');
 			
 			$.ajax({

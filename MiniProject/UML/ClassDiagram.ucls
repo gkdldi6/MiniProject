@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.jin.board.BoardDAO" project="MiniProject" 
     file="/MiniProject/src/com/jin/board/BoardDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="922" y="659"/>    
+    <position height="-1" width="-1" x="934" y="637"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.jin.board.BoardDTO" project="MiniProject" 
     file="/MiniProject/src/com/jin/board/BoardDTO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="721" y="506"/>    
+    <position height="-1" width="-1" x="696" y="562"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.jin.user.UserDAO" project="MiniProject" 
     file="/MiniProject/src/com/jin/user/UserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1353" y="678"/>    
+    <position height="-1" width="-1" x="1417" y="595"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="com.jin.user.UserDTO" project="MiniProject" 
     file="/MiniProject/src/com/jin/user/UserDTO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1146" y="446"/>    
+    <position height="-1" width="-1" x="1137" y="589"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,60 +39,151 @@
   </class>  
   <class id="5" language="java" name="com.jin.controller.Controller" project="MiniProject" 
     file="/MiniProject/src/com/jin/controller/Controller.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="236" y="116"/>    
+    <position height="-1" width="-1" x="279" y="609"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="com.jin.action.Action" project="MiniProject" 
+  <class id="6" language="java" name="com.jin.action.ArticleReadAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/ArticleReadAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="203" y="23"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.jin.action.UserLoginAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/UserLoginAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="193" y="181"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.jin.action.ArticleDeleteAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/ArticleDeleteAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="578" y="170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.jin.action.ArticleInsertAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/ArticleInsertAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="574" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="com.jin.action.Action" project="MiniProject" 
     file="/MiniProject/src/com/jin/action/Action.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1055" y="20"/>    
+    <position height="-1" width="-1" x="1209" y="335"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="com.jin.action.UserUpdateAction" project="MiniProject" 
-    file="/MiniProject/src/com/jin/action/UserUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="674" y="161"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="com.jin.action.UserInsertAction" project="MiniProject" 
+  <class id="11" language="java" name="com.jin.action.UserInsertAction" project="MiniProject" 
     file="/MiniProject/src/com/jin/action/UserInsertAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1057" y="161"/>    
+    <position height="-1" width="-1" x="974" y="159"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.jin.action.UserDeleteAction" project="MiniProject" 
+  <class id="12" language="java" name="com.jin.action.ArticleUpdateAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/ArticleUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1357" y="159"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.jin.action.UserUpdateAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/UserUpdateAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="958" y="6"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.jin.action.UserDeleteAction" project="MiniProject" 
     file="/MiniProject/src/com/jin/action/UserDeleteAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1440" y="161"/>    
+    <position height="-1" width="-1" x="1358" y="3"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="10">    
+  <class id="15" language="java" name="com.jin.action.ArticleWriteFormAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/ArticleWriteFormAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1763" y="153"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.jin.action.BoardReadAction" project="MiniProject" 
+    file="/MiniProject/src/com/jin/action/BoardReadAction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1754" y="9"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="17">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="18">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="10"/>  
   </realization>  
-  <realization id="11">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="12">    
+  <realization id="19">    
     <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="20">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="22">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="24">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="25">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <realization id="26">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

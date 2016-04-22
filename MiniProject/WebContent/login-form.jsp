@@ -19,21 +19,19 @@
 				dataType: 'xml',
 				success: function(data){
 					var result = $(data).find('result').text();
-					alert(result);
 					
 					if(result==1) {
+						alert('로그인 되었습니다.');
 						window.location.href = '/';
-					} else if(result==-1) {
-						
 					} else {
-						
+						alert('아이디 또는 비밀번호가 틀렸습니다.');
 					}
 				}
 			});
 		});
 		
 		$('#register').click(function(){
-			location.href = 'register-form.jsp';
+			window.location.replace('register-form.jsp');
 		});
 	});
 </script>

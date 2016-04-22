@@ -18,7 +18,7 @@ public class ArticleInsertAction implements Action {
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.insertArticle(article);
 		
-		return "../board/write-pro.jsp";
+		return "board/write-pro.jsp";
 	}
 
 }

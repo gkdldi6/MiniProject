@@ -25,11 +25,13 @@
 		<div class="top_line">
 			<div id="writeForm" class="div_wtitle">
 				<ul>
+					<li><span class="span_wtitle">날짜</span> <input id="date"
+						type="text" value="${article.date }"></li>
 					<li><span class="span_wtitle">아이디</span> <input id="writer"
-						type="text"></li>
+						type="text" value="${article.writer }"></li>
 					<li><span class="span_wtitle">제목</span> <input id="title"
-						name="title" type="text" maxlength="50"></li>
-					<li><textarea id="content" class="textarea_write"></textarea></li>
+						name="title" value="${article.title }" type="text" maxlength="50"></li>
+					<li><textarea id="content" class="textarea_write">${article.content }</textarea></li>
 					<li><button id="check">확인</button>
 						<button id="modify">수정</button>
 						<button id="delete">삭제</button></li>
