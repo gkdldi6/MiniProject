@@ -1,65 +1,73 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>매치메이커</title>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-<c:if test="${!empty id }">
-	<script type="text/javascript">
-		$(function() {
-			$('#modify').click(function () {
-				$(this).attr('hidden', true);
-				$('#delete').attr('hidden', true);
-				$('#check').attr('hidden', true);
-				$('#cancel').attr('hidden', false);
-				$('#modifyComplete').attr('hidden', false);
-				$('#title').removeAttr('readonly');
-				$('#content').removeAttr('readonly');
-			});
-			
-			$('#modifyComplete').click(function () {
-				$.ajax({
-					type: 'post',
-					url: '../update.board',
-					data: {
-						num: $('#num').val(),
-						title: $('#title').val(),
-						content: $('#content').val()
-					},
-					success: function (data) {
-						alert(data);
-						window.location.href = '../board';
-					}
+<c:choose>
+	<c:when test="${!empty id }">
+		<script type="text/javascript">
+			$(function() {
+				$('#modify').click(function() {
+					$(this).attr('hidden', true);
+					$('#delete, #check').attr('hidden', true);
+					$('#cancel, #modifyComplete').attr('hidden', false);
+					$('#title, #content').removeAttr('readonly');
 				});
-			});
-			
-			$('#delete').click(function () {
-				if(confirm('정말 삭제하시겠습니까?') == true) {
+
+				$('#modifyComplete').click(function() {
 					$.ajax({
-						type: 'post',
-						url: '../delete.board',
-						data: {
-							num: $('#num').val()
+						type : 'post',
+						url : '../update.board',
+						data : {
+							num : $('#num').val(),
+							title : $('#title').val(),
+							content : $('#content').val()
 						},
-						success: function (data) {
+						success : function(data) {
 							alert(data);
 							window.location.href = '../board';
-						}	
+						}
 					});
-				} ;
+				});
+
+				$('#delete').click(function() {
+					if (confirm('정말 삭제하시겠습니까?') == true) {
+						$.ajax({
+							type : 'post',
+							url : '../delete.board',
+							data : {
+								num : $('#num').val()
+							},
+							success : function(data) {
+								alert(data);
+								window.location.href = '../board';
+							}
+						});
+					};
+				});
 			});
-		});
-	</script>
-</c:if>
+		</script>
+	</c:when>
+	<c:otherwise>
+		<script type="text/javascript">
+			$(function () {
+				$('#modify, #delete').click(function () {
+					alert('회원이 아닙니다.');
+				});
+			});
+		</script>
+	</c:otherwise>
+</c:choose>
 <script type="text/javascript">
-	$(function () {
+	$(function() {
 		$('#check').click(function() {
 			window.location.href = '../board';
 		});
-		
-		$('#cancel').click(function () {
+
+		$('#cancel').click(function() {
 			window.location.href = '../board';
 		});
 	});
@@ -84,7 +92,8 @@
 					<li><span class="span_wtitle">아이디</span> <input id="writer"
 						type="text" value="${article.writer }" readonly></li>
 					<li><span class="span_wtitle">제목</span> <input id="title"
-						name="title" value="${article.title }" type="text" maxlength="50" readonly></li>
+						name="title" value="${article.title }" type="text" maxlength="50"
+						readonly></li>
 					<li><textarea id="content" class="textarea_write" readonly>${article.content }</textarea></li>
 					<li><button id="check">확인</button>
 						<button id="modify">수정</button>

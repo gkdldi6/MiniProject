@@ -7,26 +7,37 @@
 <title>매치메이커</title>
 <link rel="stylesheet" type="text/css" href="/board/css/style.css">
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-<c:if test="${!empty id}">
-<script type="text/javascript">
-	var id = ${id};
-	
-	$(function() {
-		$("#btn_write").click(function() {
-			$.ajax({
-				type: 'get',
-				url: '/select.board',
-				data: {
-					id: id	
-				},
-				success: function (data) {
-					$('section').html(data);
-				}
+<c:choose>
+	<c:when test="${!empty id }">
+		<script type="text/javascript">
+			var id = ${id};
+			
+			$(function() {
+				$("#btn_write").click(function() {
+					$.ajax({
+						type: 'get',
+						url: '/select.board',
+						data: {
+							id: id	
+						},
+						success: function (data) {
+							$('section').html(data);
+						}
+					});
+				});
 			});
-		});
-	});
-</script>
-</c:if>
+		</script>
+	</c:when>
+	<c:otherwise>
+		<script type="text/javascript">
+			$(function () {
+				$("#btn_write").click(function() {
+					alert('회원이 아닙니다.');
+				});
+			});
+		</script>
+	</c:otherwise>
+</c:choose>
 <script type="text/javascript">
 	$(function () {
 		$('tbody > tr').click(function () {
