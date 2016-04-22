@@ -1,60 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <title>매치메이커</title>
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$('#check').click(function() {
-			window.location.href = '../board';
-		});
-		
-		$('#modify').click(function () {
-			$(this).attr('hidden', true);
-			$('#delete').attr('hidden', true);
-			$('#check').attr('hidden', true);
-			$('#cancel').attr('hidden', false);
-			$('#modifyComplete').attr('hidden', false);
-			$('#title').removeAttr('readonly');
-			$('#content').removeAttr('readonly');
-		});
-		
-		$('#modifyComplete').click(function () {
-			$.ajax({
-				type: 'post',
-				url: '../update.board',
-				data: {
-					num: $('#num').val(),
-					title: $('#title').val(),
-					content: $('#content').val()
-				},
-				success: function (data) {
-					alert(data);
-					window.location.href = '../board';
-				}
+<c:if test="${!empty id }">
+	<script type="text/javascript">
+		$(function() {
+			$('#modify').click(function () {
+				$(this).attr('hidden', true);
+				$('#delete').attr('hidden', true);
+				$('#check').attr('hidden', true);
+				$('#cancel').attr('hidden', false);
+				$('#modifyComplete').attr('hidden', false);
+				$('#title').removeAttr('readonly');
+				$('#content').removeAttr('readonly');
 			});
-		});
-		
-		$('#cancel').click(function () {
-			window.location.href = '../board';
-		});
-		
-		$('#delete').click(function () {
-			if(confirm('정말 삭제하시겠습니까?') == true) {
+			
+			$('#modifyComplete').click(function () {
 				$.ajax({
 					type: 'post',
-					url: '../delete.board',
+					url: '../update.board',
 					data: {
-						num: $('#num').val()
+						num: $('#num').val(),
+						title: $('#title').val(),
+						content: $('#content').val()
 					},
 					success: function (data) {
 						alert(data);
 						window.location.href = '../board';
-					}	
+					}
 				});
-			} ;
+			});
+			
+			$('#delete').click(function () {
+				if(confirm('정말 삭제하시겠습니까?') == true) {
+					$.ajax({
+						type: 'post',
+						url: '../delete.board',
+						data: {
+							num: $('#num').val()
+						},
+						success: function (data) {
+							alert(data);
+							window.location.href = '../board';
+						}	
+					});
+				} ;
+			});
+		});
+	</script>
+</c:if>
+<script type="text/javascript">
+	$(function () {
+		$('#check').click(function() {
+			window.location.href = '../board';
 		});
 	});
 </script>

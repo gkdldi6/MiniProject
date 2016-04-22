@@ -7,8 +7,9 @@
 <title>MatchMaker</title>
 <link rel="stylesheet" type="text/css" href="/board/css/style.css">
 <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
+<c:if test="${!empty id}">
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(function() {
 		$("#btn_write").click(function() {
 			$.ajax({
 				type: 'get',
@@ -18,7 +19,11 @@
 				}
 			});
 		});
-		
+	});
+</script>
+</c:if>
+<script type="text/javascript">
+	$(function () {
 		$('tbody > tr').click(function () {
 			$(this).addClass('click');
 			var query = {num: $('.click > td:eq(0)').text()};
