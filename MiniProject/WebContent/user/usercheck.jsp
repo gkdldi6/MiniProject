@@ -3,8 +3,8 @@
 <script src="https://code.jquery.com/jquery-1.12.2.js"></script>
 <script type="text/javascript">
 	$(function () {
-		if(buttonChk == 'delete') {
-			$('#check').click(function () {
+		$('#check').click(function () {
+			if(buttonChk == 'delete') {
 				$.ajax({
 					url: 'delete.user',
 					type: 'post',
@@ -22,10 +22,27 @@
 						}
 					}
 				});
-			});
-		} else {
-			
-		}
+			} else {
+				$.ajax({
+					url: 'check.user',
+					type: 'post',
+					data: {
+						id: $('#id').val(),
+						pw: $('#pw').val()
+					},
+					success: function (data) {
+						alert(this.url);
+						
+						if(result == 1) {
+							$('#main').html(data);
+						} else {
+							alert('비밀번호가 틀렸습니다.');
+							window.location.href = '/';
+						}
+					}
+				});
+			}
+		});
 	});
 </script>
 

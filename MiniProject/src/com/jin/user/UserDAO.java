@@ -140,6 +140,7 @@ public class UserDAO {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
+			rs.next();
 			String dbpw = rs.getString("pw");
 			
 			SHA256 sha = SHA256.getInstance();
@@ -152,9 +153,13 @@ public class UserDAO {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if(rs != null) try { rs.close(); } catch (SQLException e) {}
+			if(pstmt != null) try { pstmt.close(); } catch (SQLException e) {} 
+			if(conn != null) try { conn.close(); } catch (SQLException e) {} 
 		}
 		return -1;
-	}
+	} 
 
 	public int updateUser(UserDTO user) {
 		Connection conn = null;
@@ -229,8 +234,12 @@ public class UserDAO {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if(rs != null) try { rs.close(); } catch (SQLException e) {}
+			if(pstmt != null) try { pstmt.close(); } catch (SQLException e) {} 
+			if(conn != null) try { conn.close(); } catch (SQLException e) {} 
 		}
 		return -1;
-	}
+	} 
 	
 }

@@ -14,7 +14,15 @@
 	
 <script type="text/javascript">
 	$("#update").click(function(){
-		window.location.href = 'modify-form.jsp';
+		buttonChk = 'update';
+		
+		$.ajax({
+			url: 'user/usercheck.jsp',
+			type: 'get',
+			success: function (data) {
+				$('#main').html(data);
+			}
+		});
 	});
 	
 	$("#delete").click(function(){
