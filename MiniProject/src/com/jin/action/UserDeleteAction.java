@@ -15,8 +15,9 @@ public class UserDeleteAction implements Action {
 		UserDAO userDAO = UserDAO.getInstance();
 		int result = userDAO.deleteUser(id, pw);
 		
-		System.out.println(result);
-		return "/main.jsp";
+		request.setAttribute("result", result);
+		
+		return "user/delete-pro.jsp";
 	}
 
 }

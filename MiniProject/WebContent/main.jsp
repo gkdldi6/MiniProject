@@ -5,6 +5,9 @@
 <head>
 <title>매치메이커</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript">
+	var buttonChk;
+</script>
 </head>
 <body>
 	<header>

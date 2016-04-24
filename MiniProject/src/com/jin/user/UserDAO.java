@@ -203,19 +203,34 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
+		SHA256 sha = SHA256.getInstance();
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "DELETE FROM USER WHERE ID = ?";
+			String sql = "SELECT PW FROM USER WHERE ID = ? LIMIT 1";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			pstmt.executeUpdate();
+			rs = pstmt.executeQuery();
 			
+			rs.next();
+			String dbpw = rs.getString("pw");
+			String shaPw = sha.getSha256(pw.getBytes());
+			
+			if(BCrypt.checkpw(shaPw, dbpw)) {
+				sql = "DELETE FROM USER WHERE ID = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				pstmt.executeUpdate();
+				
+				return 1;
+			} else {
+				return 0;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return -1;
 	}
 	
 }
