@@ -12,11 +12,13 @@
 	</header>
 	<nav>
 		<span><a href="/">홈</a></span>
-		<span><a href="/board">게시판</a></span>
+		<span><a href="/mmboard/">게시판</a></span>
 	</nav>
 	<section>
 		<div class="top_line"></div>
-		<jsp:include page="user/login-form.jsp"></jsp:include>
+		<div id="main">
+			<jsp:include page="user/login-form.jsp"></jsp:include>
+		</div>
 	</section>
 </body>
 </html>

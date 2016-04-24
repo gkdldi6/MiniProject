@@ -12,7 +12,7 @@ public class SHA256 {
 	
 	public SHA256(){}
 	
-	public static SHA256 getInsatnce(){
+	public static SHA256 getInstance(){
 		return s;
 	}
 	

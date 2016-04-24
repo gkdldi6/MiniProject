@@ -28,7 +28,7 @@
 						},
 						success : function(data) {
 							alert(data);
-							window.location.href = '../board';
+							window.location.href = '../mmboard/';
 						}
 					});
 				});
@@ -43,7 +43,7 @@
 							},
 							success : function(data) {
 								alert(data);
-								window.location.href = '../board';
+								window.location.href = '../mmboard/';
 							}
 						});
 					};
@@ -64,11 +64,11 @@
 <script type="text/javascript">
 	$(function() {
 		$('#check').click(function() {
-			window.location.href = '../board';
+			window.location.href = '../mmboard/';
 		});
 
 		$('#cancel').click(function() {
-			window.location.href = '../board';
+			window.location.href = '../mmboard/';
 		});
 	});
 </script>
@@ -79,7 +79,7 @@
 		<h1>매치메이커</h1>
 	</header>
 	<nav>
-		<span><a href="/">홈</a></span> <span><a href="/board">게시판</a></span>
+		<span><a href="/">홈</a></span> <span><a href="/mmboard/">게시판</a></span>
 	</nav>
 	<section>
 		<div class="top_line">

@@ -25,8 +25,7 @@ import com.jin.action.Action;
  */
 @WebServlet(
 		urlPatterns = { 
-				"/board",
-				"/board/article",
+				"/mmboard/*",
 				"*.user",
 				"*.board"
 		}, 
@@ -57,7 +56,7 @@ public class Controller extends HttpServlet {
 		ServletContext context = config.getServletContext();
 		
 		//realFolder를 웹어플리케이션 시스템상의 절대경로로 변경
-		String realPath = context.getRealPath(realFolder) +"/" + props;
+		String realPath = context.getRealPath(realFolder) +"\\" + props;
 		System.out.println("실제 경로 : " + realPath);
 
 		//명령어와 처리클래스의 매핑정보를 저장할 Properties객체 생성
@@ -128,9 +127,10 @@ public class Controller extends HttpServlet {
 				command = command.substring(request.getContextPath().length());
 
 				System.out.println("요청 명령 : " + command);
-				System.out.println("요청 처리 클래스 : " + command.toString());
 
 				act = (Action) commandMap.get(command);
+				System.out.println("요청 처리 클래스 : " + act.toString());
+				
 				view = act.action(request, response);
 				System.out.println("요청  처리 결과 뷰 : " + view);
 			}

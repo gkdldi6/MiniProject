@@ -11,7 +11,7 @@
 	</header>
 	<nav>
 		<span><a href="/">홈</a></span>
-		<span><a href="/board">게시판</a></span>
+		<span><a href="/mmboard/">게시판</a></span>
 	</nav>
 	<section>
 		<jsp:include page="/board/list.jsp"></jsp:include>

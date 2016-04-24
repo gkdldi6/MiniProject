@@ -36,7 +36,7 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		SHA256 sha = SHA256.getInsatnce();
+		SHA256 sha = SHA256.getInstance();
 		try {
 			conn = getConnection();
 			
@@ -66,7 +66,7 @@ public class UserDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
 		
-		SHA256 sha = SHA256.getInsatnce();
+		SHA256 sha = SHA256.getInstance();
 		try {
 			conn = getConnection();
 			
@@ -100,13 +100,60 @@ public class UserDAO {
 	}
 
 	public int confirmId(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
-		return 0;
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT 1 FROM USER WHERE ID = ? LIMIT 1"; 
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				return 1;
+			} else {
+				return 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) try { rs.close(); } catch (SQLException e) {}
+			if(pstmt != null) try { pstmt.close(); } catch (SQLException e) {} 
+			if(conn != null) try { conn.close(); } catch (SQLException e) {} 
+		}
+		return -1;
 	}
 
-	public UserDTO getUser(String id, String pw) {
-		// TODO Auto-generated method stub
-		return null;
+	public int checkUser(String id, String pw) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			
+			String sql = "SELECT PW FROM USER WHERE ID = ? LIMIT 1";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			String dbpw = rs.getString("pw");
+			
+			SHA256 sha = SHA256.getInstance();
+			String shaPw = sha.getSha256(pw.getBytes());
+			
+			if(BCrypt.checkpw(shaPw, dbpw)) {
+				return 1;
+			} else {
+				return 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 
 	public int updateUser(UserDTO user) {

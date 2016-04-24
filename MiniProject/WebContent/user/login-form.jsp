@@ -9,6 +9,8 @@
 <script src="https://code.jquery.com/jquery-1.12.2.js"></script>
 <script type="text/javascript">
 	$(function() {
+		$('#id').focus();
+		
 		$("#login").click(function() {
 			$.ajax({
 				type : 'post',
@@ -32,7 +34,13 @@
 		});
 
 		$('#register').click(function() {
-			window.location.href = 'user/register-form.jsp';
+			$.ajax({
+				url: 'user/register-form.jsp',
+				type: 'get',
+				success: function (data) {
+					$('#main').html(data);					
+				}
+			});
 		});
 	});
 </script>
@@ -42,14 +50,13 @@
 		<c:when test="${empty id }">
 			<div class="login_main_box">
 				<div class="login_form_box">
-					<img src="/user/image/login_tit.gif">
 					<p>
 						<input id="id" name="id" type="text" placeholder="아이디">
 					</p>
 					<p class="login_btn">
 						<input id="pw" name="pw" type="password" placeholder="비밀번호">
 					</p>
-					<button id="login" class="button">로그인</button>
+					<button id="login" class="button">로그인</button>&nbsp;&nbsp;
 					<button id="register" class="button">회원가입</button>
 				</div>
 			</div>
@@ -58,5 +65,12 @@
 			<jsp:include page="/user-menu.jsp"></jsp:include>
 		</c:when>
 	</c:choose>
+	<c:if test="${!empty msg }">
+	<script type="text/javascript">
+		var msg = '${msg}';	
+		alert(msg);
+	</script>
+	<c:remove var="msg"/>
+</c:if>
 </body>
 </html>

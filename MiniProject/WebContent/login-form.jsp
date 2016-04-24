@@ -6,6 +6,13 @@
 <head>
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-1.12.2.js"></script>
+<c:if test="${!empty msg }">
+	<script type="text/javascript">
+		var msg = ${msg};	
+		alert(msg);
+	</script>
+	<c:remove var="msg"/>
+</c:if>
 <script type="text/javascript">
 	$(function(){
 		$("#login").click(function(){
@@ -19,6 +26,7 @@
 				dataType: 'xml',
 				success: function(data){
 					var result = $(data).find('result').text();
+					alert(result);
 					
 					if(result==1) {
 						alert('로그인 되었습니다.');

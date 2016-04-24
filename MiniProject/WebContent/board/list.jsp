@@ -10,7 +10,7 @@
 <c:choose>
 	<c:when test="${!empty id }">
 		<script type="text/javascript">
-			var id = ${id};
+			var id = '${id}';
 			
 			$(function() {
 				$("#btn_write").click(function() {
@@ -47,7 +47,7 @@
 			
 			$.ajax({
 				type: 'get',
-				url: '/board/article',
+				url: '/mmboard/article',
 				data: query,
 				success: function (data) {
 					window.location.href = this.url;
@@ -90,8 +90,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<div class="div_page_num">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
-			17 18 19 20</div>
+		<div class="div_page_num">
+<!-- 		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -->
+		</div>
 		<div>
 			<img id="btn_write" src="/board/image/btn_write.gif">
 		</div>

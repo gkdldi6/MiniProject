@@ -8,7 +8,7 @@ body {
 input {
   vertical-align: middle;
   height: 29px;
-  line-height: 29px;
+/*   line-height: 29px; */
   font-size: 14px;
   border: 1px solid #afafaf;
 }
