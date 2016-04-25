@@ -165,43 +165,34 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
-		int result = FAILURE;
+		SHA256 sha = SHA256.getInstance();
 		
 		try {
 			conn = getConnection();
 			
-			String sql = "SELECT PW FROM USER WHERE ID = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getId());
-			rs = pstmt.executeQuery();
-			
-			rs.next();
-			String dbPw = rs.getString("pw");
 			String pw = user.getPw();
+			String shaPw = sha.getSha256(pw.getBytes());
+			String bcPw = BCrypt.hashpw(shaPw, BCrypt.gensalt());
 			
-			if(pw.equals(dbPw)) {
-				sql = "UPDATE USER SET NAME = ?, AGE = ?, EMAIL = ? WHERE ID = ?";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, user.getName());
-				pstmt.setString(2, user.getAge());
-				pstmt.setString(3, user.getEmail());
-				pstmt.setString(4, user.getId());
-				
-				pstmt.executeUpdate();
-				
-				result = SUCCESS;
-			} else {
-				result = FAILURE;
-			}
+			String sql = "UPDATE USER SET PW = ?, NAME = ?, AGE = ?, EMAIL = ? WHERE ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bcPw);
+			pstmt.setString(2, user.getName());
+			pstmt.setString(3, user.getAge());
+			pstmt.setString(4, user.getEmail());
+			pstmt.setString(5, user.getId());
+			
+			pstmt.executeUpdate();
+			
+			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
-			result = ERROR;
 		} finally {
 			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
             if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
             if (conn != null) try { conn.close(); } catch(SQLException ex) {}
         }
-		return result;
+		return 0;
 	}
 
 	public int deleteUser(String id, String pw) {

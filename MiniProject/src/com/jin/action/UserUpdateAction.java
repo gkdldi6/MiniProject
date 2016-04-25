@@ -20,8 +20,8 @@ public class UserUpdateAction implements Action {
 		UserDAO userDAO = UserDAO.getInstance();
 		int result = userDAO.updateUser(user);
 		
-		System.out.println(result);
+		request.setAttribute("result", result);
 		
-		return "/main.jsp";
+		return "user/modify-pro.jsp";
 	}
 }

@@ -31,10 +31,10 @@
 						pw: $('#pw').val()
 					},
 					success: function (data) {
-						alert(this.url);
-						
-						if(result == 1) {
-							$('#main').html(data);
+						if(data == 1) {
+							$.get('user/modify-form.jsp', function (data) {
+								$('#main').html(data);
+							});
 						} else {
 							alert('비밀번호가 틀렸습니다.');
 							window.location.href = '/';

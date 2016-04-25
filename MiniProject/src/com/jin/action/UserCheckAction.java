@@ -17,7 +17,7 @@ public class UserCheckAction implements Action {
 		
 		request.setAttribute("result", result);
 		
-		return "user/modify-form.jsp";
+		return "user/usercheck-pro.jsp";
 	}
 
 }
