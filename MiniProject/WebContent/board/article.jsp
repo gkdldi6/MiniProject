@@ -10,11 +10,18 @@
 	<c:when test="${!empty id }">
 		<script type="text/javascript">
 			$(function() {
+				var writer = ${article.writer}
+				var id = ${id}
+				
 				$('#modify').click(function() {
-					$(this).attr('hidden', true);
-					$('#delete, #check').attr('hidden', true);
-					$('#cancel, #modifyComplete').attr('hidden', false);
-					$('#title, #content').removeAttr('readonly');
+					if(id == writer) {
+						$(this).attr('hidden', true);
+						$('#delete, #check').attr('hidden', true);
+						$('#cancel, #modifyComplete').attr('hidden', false);
+						$('#title, #content').removeAttr('readonly');	
+					} else {
+						alert('작성자만 수정이 가능합니다.');
+					}
 				});
 
 				$('#modifyComplete').click(function() {
@@ -34,19 +41,23 @@
 				});
 
 				$('#delete').click(function() {
-					if (confirm('정말 삭제하시겠습니까?') == true) {
-						$.ajax({
-							type : 'post',
-							url : '../delete.board',
-							data : {
-								num : $('#num').val()
-							},
-							success : function(data) {
-								alert(data);
-								window.location.href = '../mmboard/';
-							}
-						});
-					};
+					if(id == writer) {
+						if (confirm('정말 삭제하시겠습니까?') == true) {
+							$.ajax({
+								type : 'post',
+								url : '../delete.board',
+								data : {
+									num : $('#num').val()
+								},
+								success : function(data) {
+									alert(data);
+									window.location.href = '../mmboard/';
+								}
+							});
+						};
+					} else {
+						alert('작성자만 삭제가 가능합니다.');
+					}
 				});
 			});
 		</script>
